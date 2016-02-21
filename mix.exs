@@ -24,7 +24,7 @@ defmodule VerifyOrigin.Mixfile do
 
   defp package do
     [
-      contributors: ["Dan McClain"],
+      maintainers: ["Dan McClain"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/danmcclain/verify_origin",
