@@ -1,4 +1,21 @@
 defmodule VerifyOrigin do
+  @moduledoc """
+  Plug to protect from cross-site request forgery via
+  verifying the `Origin` header.
+
+  GET and HEAD requests are not verified because the do
+  not provide the `Origin` header.
+
+  ## Configuration
+
+  The plug takes a list of valid domains as its only
+  option. The `Origin` header must be one of these
+  for the request to be permitted
+
+  ## Example
+      plug VerifyOrigin, ["https://example.com"]
+  """
+
   @behaviour Plug
   import Plug.Conn
   @unprotected_methods ["GET", "HEAD"]
