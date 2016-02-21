@@ -5,9 +5,17 @@ defmodule VerifyOriginTest do
 
   @opts VerifyOrigin.init(["http://example.com", "https://example.com"])
 
-  test "allows get requests to pass through without origin header" do
+  test "allows GET requests to pass through without origin header" do
     conn =
       conn(:get, "http://example.com/foo")
+      |> VerifyOrigin.call(@opts)
+
+    assert conn.halted == false
+  end
+
+  test "allows HEAD requests to pass through without origin header" do
+    conn =
+      conn(:head, "http://example.com/foo")
       |> VerifyOrigin.call(@opts)
 
     assert conn.halted == false
