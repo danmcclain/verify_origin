@@ -19,7 +19,10 @@ defmodule VerifyOrigin.Mixfile do
   end
 
   defp deps do
-    [{:plug, "~> 1.0"}]
+    [
+      {:plug, "~> 1.0"},
+      {:ex_doc, ">= 0.6.0", only: [:dev]}
+    ]
   end
 
   defp package do
@@ -28,7 +31,6 @@ defmodule VerifyOrigin.Mixfile do
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/danmcclain/verify_origin",
-        "Documentation" => "http://hexdocs.pm/verify_origin"
       }
     ]
   end
