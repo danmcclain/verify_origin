@@ -1,10 +1,15 @@
 # VerifyOrigin
 
-**TODO: Add description**
+Simple yet effective cross-site request forgery (CSRF) mitigation
+
+## Usage
+Include the plug in your application pipeline with a list of valid `Origin` headers
+
+```
+plug VerifyOrigin, ["https://example.com"]
+```
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
   1. Add verify_origin to your list of dependencies in `mix.exs`:
 
